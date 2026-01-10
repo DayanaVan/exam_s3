@@ -46,6 +46,12 @@ void addBeginning(Node*& top, int value) {
     top = addBegin;
 }
 
+void deleteBeginning(Node*& top) {
+    Node* deleteNode = top;
+    top = top->next;
+    delete deleteNode;
+}
+
 int getCount(Node*& top) {
     int q = 0;
     Node* current = top;
@@ -106,7 +112,7 @@ int main()
     addAt(test, 5, 1);
     print(test);
 
-    delete1(test);
+    deleteBeginning(test);
     print(test);
 }
 
