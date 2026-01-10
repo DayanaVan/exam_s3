@@ -24,6 +24,21 @@ void add(Node*& top, int value) {
     current->next = addNode;
 }
 
+void delete1(Node*& top) {
+    if (top == nullptr) {
+        return;
+    }
+
+    Node* deleteNode = top;
+    Node* prev = nullptr;
+    while (deleteNode->next != nullptr) {
+        prev = deleteNode;
+        deleteNode = deleteNode->next;
+    }
+    prev->next = nullptr;
+    delete deleteNode;
+}
+
 void addBeginning(Node*& top, int value) {
     Node* addBegin = new Node;
     addBegin->data = value;
@@ -68,8 +83,30 @@ void addAt(Node*& top, int value, int position) {
 
 }
 
+void print(Node*& top) {
+    Node* printNode = top;
+    while (printNode != nullptr) {
+        cout << printNode->data << " ";
+        printNode = printNode->next;
+    }
+    cout << endl;
+}
+
 int main()
 {
-    std::cout << "Hello World!\n";
+    Node* test = nullptr;
+    add(test, 1);
+    add(test, 2);
+    add(test, 3);
+    print(test);
+
+    addBeginning(test, 4);
+    print(test);
+
+    addAt(test, 5, 1);
+    print(test);
+
+    delete1(test);
+    print(test);
 }
 
