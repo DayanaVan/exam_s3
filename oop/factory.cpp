@@ -22,7 +22,7 @@ public:
     }
 };
 
-class Logistics { // создатель
+class Logistics { // создатель (фабрика)
 public:
     virtual Transport* createTransport() = 0;
 
@@ -35,14 +35,14 @@ public:
     virtual ~Logistics() {}
 };
 
-class roadLogistics : public Logistics { // конкретный создатель 1
+class roadLogistics : public Logistics { // конкретный создатель 1 (конкретная фабрика 1)
 public:
     Transport* createTransport() override {
         return new Truck();
     }
 };
 
-class seaLogistics : public Logistics { // конкретный создатель 2
+class seaLogistics : public Logistics { // конкретный создатель 2  (конкретная фабрика 2)
 public:
     Transport* createTransport() override {
         return new Ship();
