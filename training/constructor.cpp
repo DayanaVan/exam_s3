@@ -23,6 +23,25 @@ public:
     }
 };
 
+class Myclass {
+private:
+    int data;
+
+public:
+
+    Myclass(int value) 
+    {
+        data = value;
+        cout << data << " constructing..." << endl;
+    }
+
+    ~Myclass() 
+    {
+        cout << data << " destruction..." << endl;
+    }
+
+};
+
 int main()
 {
     Point a(1, 1);
