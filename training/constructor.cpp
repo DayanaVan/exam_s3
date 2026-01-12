@@ -7,7 +7,12 @@ private:
     int y;
 
 public:
-    Point(int valueX, int valueY) // only in public section!
+    Point() {
+        x = 0;
+        y = 0;
+    } // по умолчанию
+
+    Point(int valueX, int valueY) // с параметрами
     {
         x = valueX;
         y = valueY;
@@ -21,8 +26,9 @@ public:
 int main()
 {
     Point a(1, 1);
-    Point b(2, 4);
     a.Print();
+
+    Point b;
     b.Print();
 
     return 0;
